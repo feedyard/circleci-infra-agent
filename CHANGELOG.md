@@ -45,5 +45,14 @@ musl-dev (1.1.16-r13)
 gem install inspec -v 1.33.1
 
 
-### 09-01-2017 move to different repo
+### 09-01-2017 redefine as infra-agent definition and move to new repo
+
+alpine:3.6
+
+apk update & upgrade versions change
+(1/5) Upgrading musl (1.1.16-r10 -> 1.1.16-r13)
+(2/5) Upgrading busybox (1.26.2-r5 -> 1.26.2-r6)
+(3/5) Upgrading libressl2.5-libcrypto (2.5.4-r0 -> 2.5.5-r0)
+(4/5) Upgrading libressl2.5-libssl (2.5.4-r0 -> 2.5.5-r0)
+(5/5) Upgrading musl-utils (1.1.16-r10 -> 1.1.16-r13)
 
