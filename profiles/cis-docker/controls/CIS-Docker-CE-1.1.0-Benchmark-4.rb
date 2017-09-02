@@ -88,25 +88,22 @@ end
 
 control 'cis-docker-benchmark-4.8' do
   impact 0.0
-  title 'Ensure setuid and setgid permissions are removed in the images'
+  title 'Ensure setuid and setgid permissions are removed in the images (Not Scored)'
   desc 'setuid and setgid permissions could be used for elevating privileges. Allow setuid and setgid permissions only on executables which need them. '
 
   ref url: 'http://man7.org/linux/man-pages/man2/setuid.2.html'
   ref url: 'http://man7.org/linux/man-pages/man2/setgid.2.html'
-  # describe 'setuid and setgid permissions' do
-  #   skip 'starting from alpine base, all installed packages iwth runtimes should use default'
-  # end
-
-  docker.images.ids.each do |id|
-    describe command("docker history #{id}| grep -e '/find / -perm +6000 -type f -exec chmod a-s/g'") do
-      its('stdout') { should eq '' }
-    end
+  # circleci agents are short-lived and this remediates the elevated privilege risk from attack
+  # the following line could be used to alter executables with set permissions
+  # RUN find / -perm +6000 -type f -exec chmod a-s {} \; || true
+  describe 'setuid and setgid permissions' do
+    skip 'starting from alpine base, all installed packages with executables use default'
   end
 end
 
 control 'cis-docker-benchmark-4.9' do
   impact 0.3
-  title 'Use COPY instead of ADD in Dockerfile'
+  title 'Ensure COPY is used instead of ADD in Dockerfile (Not Scored)'
   desc 'COPY instruction just copies the files from the local host machine to the container file system. ADD instruction potentially could retrieve files from remote URLs and perform operations such as unpacking.'
 
   docker.images.ids.each do |id|
@@ -118,17 +115,17 @@ end
 
 control 'cis-docker-benchmark-4.10' do
   impact 0.0
-  title 'Do not store secrets in Dockerfiles'
-  desc 'Dockerfiles could be backtracked easily by using native Docker commands.'
+  title 'Ensure secrets are not installed in Dockerfiles (Not Scored)'
+  desc 'Do not store any secrets in Dockerfiles and these can be easily revealed using docker native commands.'
 
   describe 'Dockerfile test' do
-    skip 'Manually verify that you have not used secrets in images'
+    skip 'Manually verify that you have not used secrets in images adnn use tools such as Talisman to validate repo contents'
   end
 end
 
 control 'cis-docker-benchmark-4.11' do
   impact 0.0
-  title 'Do not store secrets in Dockerfiles'
+  title 'Ensure verified packages are only installed (Not Scored)'
   desc 'Verifying authenticity of the packages is essential for building a secure container image.'
 
   describe 'Verify packages' do
