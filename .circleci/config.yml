@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: ~/circleci-infra-agent
     environment:
-      LIBRARY: feedyard
+      LIBRARY: quay.io/feedyard
       CONTAINER_NAME: circleci-infra-agent
       VERSION: 3.6
       BASH_ENV: .circlerc
