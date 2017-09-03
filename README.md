@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/feedyard/circleci-infra-agent.svg?style=shield)](https://circleci.com/gh/feedyard/circleci-infra-agent)
 # circleci-infra-agent
 Docker image for circle-ci infrastructure pipelines
 
@@ -18,4 +19,4 @@ boto3<br />
 aws-cli<br /><br />
 
 ###### note
-Dockerbuild currently pulls packages from public sources. Depending on your security profile this may not be appropriate - consider deploying local mirrors for managing package validation and security.
+Dockerfile currently pulls packages from public sources. Depending on your security profile this may not be appropriate - consider deploying local mirrors for managing package validation and security.
