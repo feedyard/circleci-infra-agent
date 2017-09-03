@@ -9,7 +9,7 @@ jobs:
       VERSION: 3.6
       BASH_ENV: .circlerc
     docker:
-      - image: feedyard/circleci-docker # replace with self once at testable version
+      - image: feedyard/circleci-docker # build using feedyard circleci baseline runner
     steps:
       - checkout
       - setup_remote_docker
