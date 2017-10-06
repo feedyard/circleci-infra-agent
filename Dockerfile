@@ -22,7 +22,7 @@ RUN python3 -m ensurepip && \
 # infrastructure specific build, deploy, test tools
 RUN pip install docker-compose invoke boto3 awscli
 RUN echo "gem: --no-document" > /etc/gemrc
-RUN gem install inspec:1.35.1 awspec:0.81.1
+RUN gem install inspec:1.40.0 awspec:0.87.0
 
 # hashicorp
 ENV TERRAFORM_VERSION=0.10.7
@@ -34,8 +34,8 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-ENV PACKER_VERSION=1.0.4
-ENV PACKER_SHA256SUM=646da085cbcb8c666474d500a44d933df533cf4f1ff286193d67b51372c3c59e
+ENV PACKER_VERSION=1.1.0
+ENV PACKER_SHA256SUM=bd1eddfa114f7e6258ef3419613380297f1b4e438f5bae92f1177150519be934
 
 RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip > packer_${PACKER_VERSION}_linux_amd64.zip && \
     echo "${PACKER_SHA256SUM}  packer_${PACKER_VERSION}_linux_amd64.zip" > packer_${PACKER_VERSION}_SHA256SUMS && \

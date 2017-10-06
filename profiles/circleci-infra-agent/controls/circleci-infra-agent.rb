@@ -88,7 +88,7 @@ control 'curl version' do
   title 'confirm curl version installed'
   desc 'confirm version reported by curl matches the desired version'
   describe command('curl -V') do
-    its('stdout') { should include ('7.55') }
+    its('stdout') { should include ('7.56') }
   end
 end
 
@@ -133,7 +133,7 @@ control 'ruby version' do
   title 'confirm ruby version installed'
   desc 'confirm version reported by ruby matches the desired version'
   describe command('ruby -v') do
-    its('stdout') { should include ('2.4.1') }
+    its('stdout') { should include ('2.4.2') }
   end
 end
 
@@ -196,7 +196,7 @@ control 'invoke version' do
   title 'confirm invoke version installed'
   desc 'confirm version reported by invoke matches the desired version'
   describe command('invoke -V') do
-    its('stdout') { should include ('0.20') }
+    its('stdout') { should include ('0.21') }
   end
 end
 
@@ -214,7 +214,7 @@ control 'inspec version' do
   title 'confirm inspec version installed'
   desc 'confirm version reported by inspec matches the desired version'
   describe command('inspec version') do
-    its('stdout') { should include ('1.35') }
+    its('stdout') { should include ('1.40') }
   end
 end
 
@@ -223,7 +223,7 @@ control 'awspec version' do
   title 'confirm awspec version installed'
   desc 'confirm version reported by awspec matches the desired version'
   describe command('awspec -v') do
-    its('stdout') { should include ('0.81') }
+    its('stdout') { should include ('0.87') }
   end
 end
 
@@ -241,7 +241,7 @@ control 'packer version' do
   title 'confirm packer version installed'
   desc 'confirm version reported by packer matches the desired version'
   describe command('packer -v') do
-    its('stdout') { should include ('1.0') }
+    its('stdout') { should include ('1.1') }
   end
 end
 

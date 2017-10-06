@@ -144,6 +144,7 @@ python_dateutil-2.6.1
 docutils-0.14
 boto3-1.4.7
 
+
 *ruby gems
  json-2.1.0
  mixlib-shellout-2.3.2
@@ -208,13 +209,26 @@ boto3-1.4.7
  activesupport-4.2.9
  tins-1.15.0
  term-ansicolor-1.6.0
- awspec-0.81.1
+ 
 
 packer (1.0.4)
 terraform (0.10.3)
 kubectl (v1.7.0)
 kops (1.7.0)
 
-### 10-06-2017 update terraform version
+### 10-06-2017 patch and update various versions
 
+version changes
+libcurl (7.56.0-r0)
+curl (7.56.0-r0)
+sqlite-libs (3.20.0-r0)
+python3 (3.6.1-r3)
+ruby-libs (2.4.2-r0)
+ruby (2.4.2-r0)
+ruby-io-console (2.4.2-r0)
+
+invoke (0.21.0)
+awscli (1.11.166)
+inspec-1.40.0
+awspec-0.87.0
 terraform (0.10.7)
