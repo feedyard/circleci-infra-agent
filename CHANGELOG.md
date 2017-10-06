@@ -215,3 +215,6 @@ terraform (0.10.3)
 kubectl (v1.7.0)
 kops (1.7.0)
 
+### 10-06-2017 update terraform version
+
+terraform (0.10.7)
