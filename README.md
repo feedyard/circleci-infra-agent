@@ -15,7 +15,7 @@ awspec (1.0.0)
 
 **build/deploy**  
 docker (17.10)
-docker-compose (1.16)  
+docker-compose (1.17)  
 packer (1.1.2)
 terraform (0.11.1)  
 boto3 (1.4.7)  

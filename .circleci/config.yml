@@ -6,10 +6,10 @@ jobs:
     environment:
       LIBRARY: quay.io/feedyard
       CONTAINER_NAME: circleci-infra-agent
-      VERSION: 3.6
+      VERSION: 3.7
       BASH_ENV: .circlerc
     docker:
-      - image: feedyard/circleci-docker # build using feedyard circleci baseline runner
+      - image: feedyard/circleci-remote-docker
     steps:
       - checkout
       - setup_remote_docker
