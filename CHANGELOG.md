@@ -232,3 +232,131 @@ awscli (1.11.166)
 inspec-1.40.0
 awspec-0.87.0
 terraform (0.10.7)
+
+# 12-17-2017 Alpine 3.7 update
+
+(1/14) Installing ca-certificates (20171114-r0)
+(2/14) Installing libssh2 (1.8.0-r2)
+(3/14) Installing libcurl (7.57.0-r0)
+(4/14) Installing expat (2.2.5-r0)
+(5/14) Installing pcre2 (10.30-r0)
+(6/14) Installing git (2.15.0-r1)
+(7/14) Installing gzip (1.8-r0)
+(8/14) Installing openssh-keygen (7.5_p1-r8)
+(9/14) Installing openssh-client (7.5_p1-r8)
+(10/14) Installing openssh-sftp-server (7.5_p1-r8)
+(11/14) Installing openssh-server-common (7.5_p1-r8)
+(12/14) Installing openssh-server (7.5_p1-r8)
+(13/14) Installing openssh (7.5_p1-r8)
+(14/14) Installing tar (1.29-r1)
+
+(1/54) Installing pkgconf (1.3.10-r0)
+(2/54) Installing ncurses-terminfo-base (6.0_p20170930-r0)
+(3/54) Installing ncurses-terminfo (6.0_p20170930-r0)
+(4/54) Installing ncurses-libs (6.0_p20170930-r0)
+(5/54) Installing readline (7.0.003-r0)
+(6/54) Installing bash (4.4.12-r2)
+(7/54) Installing bash-completion (2.7-r3)
+(8/54) Installing bash-doc (4.4.12-r2)
+(9/54) Installing curl (7.57.0-r0)
+(10/54) Installing libmnl (1.0.4-r0)
+(11/54) Installing jansson (2.10-r0)
+(12/54) Installing libnftnl-libs (1.0.8-r1)
+(13/54) Installing iptables (1.6.1-r1)
+(14/54) Installing device-mapper-libs (2.02.175-r0)
+(15/54) Installing libltdl (2.4.6-r4)
+(16/54) Installing libseccomp (2.3.2-r0)
+(17/54) Installing docker (17.10.0-r0)
+(18/54) Installing docker-bash-completion (17.10.0-r0)
+(19/54) Installing libgcc (6.4.0-r5)
+(20/54) Installing libstdc++ (6.4.0-r5)
+(21/54) Installing binutils-libs (2.28-r3)
+(22/54) Installing binutils (2.28-r3)
+(23/54) Installing gmp (6.1.2-r1)
+(24/54) Installing isl (0.18-r0)
+(25/54) Installing libgomp (6.4.0-r5)
+(26/54) Installing libatomic (6.4.0-r5)
+(27/54) Installing mpfr3 (3.1.5-r1)
+(28/54) Installing mpc1 (1.0.3-r1)
+(29/54) Installing gcc (6.4.0-r5)
+(30/54) Installing musl-dev (1.1.18-r2)
+(31/54) Installing libc-dev (0.7.1-r0)
+(32/54) Installing g++ (6.4.0-r5)
+(33/54) Installing git-bash-completion (2.15.0-r1)
+(34/54) Installing libffi (3.2.1-r4)
+(35/54) Installing libffi-dev (3.2.1-r4)
+(36/54) Installing make (4.2.1-r0)
+(37/54) Installing openrc (0.24.1-r4)
+(38/54) Installing libcrypto1.0 (1.0.2n-r0)
+(39/54) Installing libssl1.0 (1.0.2n-r0)
+(40/54) Installing openssl (1.0.2n-r0)
+(41/54) Installing libbz2 (1.0.6-r6)
+(42/54) Installing gdbm (1.13-r1)
+(43/54) Installing xz-libs (5.2.3-r1)
+(44/54) Installing sqlite-libs (3.21.0-r0)
+(45/54) Installing python3 (3.6.3-r9)
+(46/54) Installing yaml (0.1.7-r0)
+(47/54) Installing ruby-libs (2.4.3-r0)
+(48/54) Installing ruby (2.4.3-r0)
+(49/54) Installing ruby-io-console (2.4.3-r0)
+(50/54) Installing ruby-bundler (1.16.0-r0)
+(51/54) Installing libgmpxx (6.1.2-r1)
+(52/54) Installing gmp-dev (6.1.2-r1)
+(53/54) Installing ruby-dev (2.4.3-r0)
+(54/54) Installing wget (1.19.2-r1)
+
+Downloading setuptools-38.2.4-py2.py3-none-any.whl (489kB)
+Downloading invoke-0.21.0-py3-none-any.whl (153kB)
+
+Successfully installed json-2.1.0
+Successfully installed mixlib-shellout-2.3.2
+Successfully installed net-ssh-4.2.0
+Successfully installed net-scp-1.2.1
+Successfully installed ffi-1.9.18
+Successfully installed gssapi-1.2.0
+Successfully installed httpclient-2.8.3
+Successfully installed rubyntlm-0.6.2
+Successfully installed little-plugger-1.1.4
+Successfully installed multi_json-1.12.2
+Successfully installed logging-2.2.2
+Successfully installed nori-2.6.0
+Successfully installed builder-3.2.3
+Successfully installed gyoku-1.3.1
+Successfully installed erubis-2.7.0
+Successfully installed winrm-2.2.3
+Successfully installed rubyzip-1.2.1
+Successfully installed winrm-fs-1.1.1
+Successfully installed excon-0.60.0
+Successfully installed docker-api-1.34.0
+Successfully installed train-0.31.1
+Successfully installed thor-0.20.0
+Successfully installed method_source-0.9.0
+Successfully installed rspec-support-3.7.0
+Successfully installed rspec-core-3.7.0
+Successfully installed diff-lcs-1.3
+Successfully installed rspec-expectations-3.7.0
+Successfully installed rspec-mocks-3.7.0
+Successfully installed rspec-3.7.0
+Successfully installed rspec-its-1.2.0
+Successfully installed coderay-1.1.2
+Successfully installed pry-0.11.3
+Successfully installed hashie-3.5.6
+Successfully installed mixlib-log-1.7.1
+Successfully installed sslshake-1.2.0
+Successfully installed parallel-1.12.1
+Successfully installed multipart-post-2.0.0
+Successfully installed faraday-0.13.1
+Successfully installed tomlrb-1.2.6
+Successfully installed public_suffix-3.0.1
+Successfully installed addressable-2.5.2
+Successfully installed parslet-1.8.1
+Successfully installed semverse-2.0.0
+Successfully installed htmlentities-4.3.4
+Successfully installed inspec-1.48.0
+
+
+awscli (1.14)
+inspec-1.48.0
+awspec-1.0.0
+terraform (0.11.1)
+consul (1.0.1)

@@ -43,7 +43,7 @@ control 'git version' do
   title 'confirm git version installed'
   desc 'confirm version reported by git matches the desired version'
   describe command('git version') do
-    its('stdout') { should include ('2.13') }
+    its('stdout') { should include ('2.15') }
   end
 end
 
@@ -79,7 +79,7 @@ control 'bash version' do
   title 'confirm bash version installed'
   desc 'confirm version reported by bash matches the desired version'
   describe command('bash --version') do
-    its('stdout') { should include ('4.3.48') }
+    its('stdout') { should include ('4.4') }
   end
 end
 
@@ -88,7 +88,7 @@ control 'curl version' do
   title 'confirm curl version installed'
   desc 'confirm version reported by curl matches the desired version'
   describe command('curl -V') do
-    its('stdout') { should include ('7.56') }
+    its('stdout') { should include ('7.57') }
   end
 end
 
@@ -124,7 +124,7 @@ control 'python3 version' do
   title 'confirm python3 version installed'
   desc 'confirm version reported by python3 matches the desired version'
   describe command('python3 -V') do
-    its('stdout') { should include ('3.6.1') }
+    its('stdout') { should include ('3.6.3') }
   end
 end
 
@@ -133,7 +133,7 @@ control 'ruby version' do
   title 'confirm ruby version installed'
   desc 'confirm version reported by ruby matches the desired version'
   describe command('ruby -v') do
-    its('stdout') { should include ('2.4.2') }
+    its('stdout') { should include ('2.4.3') }
   end
 end
 
@@ -142,7 +142,7 @@ control 'bundler version' do
   title 'confirm bundler version installed'
   desc 'confirm version reported by bundler matches the desired version'
   describe command('bundler -v') do
-    its('stdout') { should include ('1.15') }
+    its('stdout') { should include ('1.16') }
   end
 end
 
@@ -151,7 +151,7 @@ control 'g++ version' do
   title 'confirm g++ version installed'
   desc 'confirm version reported by g++ matches the desired version'
   describe command('g++ --version') do
-    its('stdout') { should include ('6.3.0') }
+    its('stdout') { should include ('6.4') }
   end
 end
 
@@ -169,7 +169,7 @@ control 'docker version' do
   title 'confirm docker version installed'
   desc 'confirm version reported by docker matches the desired version'
   describe command('docker -v') do
-    its('stdout') { should include ('17.05.0-ce') }
+    its('stdout') { should include ('17.10.0-ce') }
   end
 end
 
@@ -205,7 +205,7 @@ control 'aws-cli version' do
   title 'confirm aws-cli version installed'
   desc 'confirm version reported by aws-cli matches the desired version'
   describe command('aws --version') do
-    its('stdout') { should include ('1.11') }
+    its('stdout') { should include ('1.14') }
   end
 end
 
@@ -223,7 +223,7 @@ control 'awspec version' do
   title 'confirm awspec version installed'
   desc 'confirm version reported by awspec matches the desired version'
   describe command('awspec -v') do
-    its('stdout') { should include ('0.87') }
+    its('stdout') { should include ('1.0') }
   end
 end
 
@@ -232,7 +232,7 @@ control 'terraform version' do
   title 'confirm terraform version installed'
   desc 'confirm version reported by terraform matches the desired version'
   describe command('terraform -v') do
-    its('stdout') { should include ('0.10') }
+    its('stdout') { should include ('0.11') }
   end
 end
 
@@ -250,7 +250,7 @@ control 'kubectl version' do
   title 'confirm kubectl version installed'
   desc 'confirm version reported by kubectl matches the desired version'
   describe command('kubectl version') do
-    its('stdout') { should include ('v1.7.0') }
+    its('stdout') { should include ('v1.8.4') }
   end
 end
 
@@ -259,6 +259,6 @@ control 'kops version' do
   title 'confirm kops version installed'
   desc 'confirm version reported by kops matches the desired version'
   describe command('kops version') do
-    its('stdout') { should include ('1.7.0') }
+    its('stdout') { should include ('1.8.0') }
   end
 end
