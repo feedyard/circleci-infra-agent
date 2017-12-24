@@ -43,7 +43,7 @@ control 'docker-compose version' do
   title 'confirm docker-compose version installed'
   desc 'confirm version reported by docker-compose matches the desired version'
   describe command('docker-compose -v') do
-    its('stdout') { should include ('1.17') }
+    its('stdout') { should include ('1.18') }
   end
 end
 
