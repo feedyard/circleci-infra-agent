@@ -116,10 +116,10 @@ end
 control 'cis-docker-benchmark-4.10' do
   impact 0.0
   title 'Ensure secrets are not installed in Dockerfiles (Not Scored)'
-  desc 'Do not store any secrets in Dockerfiles and these can be easily revealed using docker native commands.'
+  desc 'Do not store any secrets in Dockerfile as these can be easily revealed using docker native commands.'
 
   describe 'Dockerfile test' do
-    skip 'Manually verify that you have not used secrets in images adnn use tools such as Talisman to validate repo contents'
+    skip 'Manually verify that you have not used secrets in images and use tools such as Talisman to validate repo contents'
   end
 end
 

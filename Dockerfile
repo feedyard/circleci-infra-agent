@@ -8,7 +8,7 @@ RUN apk update && apk upgrade
 RUN apk add --no-cache ansible jq
 
 # infrastructure specific build, deploy, test tools
-RUN pip install docker-compose invoke boto3 awscli
+RUN pip install docker-compose boto3 awscli
 RUN echo "gem: --no-document" > /etc/gemrc
 RUN gem install awspec:1.0.0
 
