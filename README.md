@@ -14,16 +14,18 @@ inspec (1.48.0)
 awspec (1.0.0)    
 
 **build/deploy**  
-docker (17.10)
-docker-compose (1.17)  
-packer (1.1.2)
+docker (17.10)  
+docker-compose (1.18)  
+packer (1.1.2)  
 terraform (0.11.1)  
 boto3 (1.4.7)  
 aws-cli (1.14)  
+ansible (2.4.1)  
 kops (1.8.0)  
 kubectl (1.8.4)  
-consul (1.0.1)
+consul (1.0.1)  
 
 
 ###### note
-Dockerfile currently pulls packages from public sources. Depending on your security profile this may not be appropriate - consider deploying local mirrors for managing package validation and security.
+Dockerfile currently pulls packages from public sources. Depending on your security profile this may not be appropriate.
+Consider deploying local mirrors for managing package validation and security.
