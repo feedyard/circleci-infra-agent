@@ -3,27 +3,11 @@ control 'packages' do
   title 'confirm package installation'
   desc 'confirm all desired packages are installed'
   describe command('apk info') do
-    its('stdout') { should include ('git') }
-    its('stdout') { should include ('openssh') }
-    its('stdout') { should include ('tar') }
-    its('stdout') { should include ('gzip') }
-    its('stdout') { should include ('ca-certificates') }
-    its('stdout') { should include ('bash') }
-    its('stdout') { should include ('bash-doc') }
-    its('stdout') { should include ('bash-completion') }
-    its('stdout') { should include ('curl') }
-    its('stdout') { should include ('wget') }
-    its('stdout') { should include ('openssl') }
-    its('stdout') { should include ('openrc') }
-    its('stdout') { should include ('python3') }
-    its('stdout') { should include ('ruby') }
-    its('stdout') { should include ('ruby-bundler') }
-    its('stdout') { should include ('ruby-dev') }
-    its('stdout') { should include ('g++') }
-    its('stdout') { should include ('libffi-dev') }
-    its('stdout') { should include ('musl-dev') }
-    its('stdout') { should include ('make') }
-    its('stdout') { should include ('docker') }
+    its('stdout') { should include ('jq') }
+    its('stdout') { should include ('groff') }
+    its('stdout') { should include ('less') }
+    its('stdout') { should include ('util-linux') }
+    its('stdout') { should include ('go') }
   end
 end
 
@@ -32,9 +16,10 @@ control 'python packages' do
   title 'confirm python package installation'
   desc 'confirm all desired python packages are installed'
   describe command('pip list') do
-    its('stdout') { should include ('invoke') }
     its('stdout') { should include ('boto3') }
     its('stdout') { should include ('awscli') }
+    its('stdout') { should include ('argparse') }
+    its('stdout') { should include ('jinja2') }
   end
 end
 
@@ -61,7 +46,7 @@ control 'awspec version' do
   title 'confirm awspec version installed'
   desc 'confirm version reported by awspec matches the desired version'
   describe command('awspec -v') do
-    its('stdout') { should include ('1.0') }
+    its('stdout') { should include ('1.4') }
   end
 end
 
@@ -88,7 +73,7 @@ control 'kubectl version' do
   title 'confirm kubectl version installed'
   desc 'confirm version reported by kubectl matches the desired version'
   describe command('kubectl version') do
-    its('stdout') { should include ('v1.8.4') }
+    its('stdout') { should include ('v1.9') }
   end
 end
 
@@ -97,6 +82,15 @@ control 'kops version' do
   title 'confirm kops version installed'
   desc 'confirm version reported by kops matches the desired version'
   describe command('kops version') do
-    its('stdout') { should include ('1.8.0') }
+    its('stdout') { should include ('1.8') }
+  end
+end
+
+control 'consul version' do
+  impact 1.0
+  title 'confirm consul version installed'
+  desc 'confirm version reported by consul matches the desired version'
+  describe command('consul version') do
+    its('stdout') { should include ('1.0') }
   end
 end

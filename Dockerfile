@@ -1,20 +1,20 @@
 FROM feedyard/circleci-remote-docker
 
-MAINTAINER Nic Cheneweth <nic.cheneweth@thoughtworks.com>
+LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
 RUN apk update && apk upgrade
 
 # packages required for use as a circleci primary container
-RUN apk add --no-cache ansible jq
+RUN apk add --no-cache jq groff less util-linux go
 
 # infrastructure specific build, deploy, test tools
-RUN pip install docker-compose boto3 awscli
+RUN pip install boto3 awscli argparse jinja2
 RUN echo "gem: --no-document" > /etc/gemrc
-RUN gem install awspec:1.0.0
+RUN gem install awspec:1.4.1
 
 # hashicorp
-ENV TERRAFORM_VERSION=0.11.1
-ENV TERRAFORM_SHA256SUM=4e3d5e4c6a267e31e9f95d4c1b00f5a7be5a319698f0370825b459cb786e2f35
+ENV TERRAFORM_VERSION=0.11.3
+ENV TERRAFORM_SHA256SUM=6b8a7b83954597d36bbed23913dd51bc253906c612a070a21db373eab71b277b
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
@@ -22,8 +22,8 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-ENV PACKER_VERSION=1.1.2
-ENV PACKER_SHA256SUM=7e315a6110333d9d4269ac2ec5c68e663d82a4575d3e853996a976875612724b
+ENV PACKER_VERSION=1.2.0
+ENV PACKER_SHA256SUM=d1b0fcc4e66dfe4919c25752d028a4e4466921bf0e3f75be3bbf1c85082e8040
 
 RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip > packer_${PACKER_VERSION}_linux_amd64.zip && \
     echo "${PACKER_SHA256SUM}  packer_${PACKER_VERSION}_linux_amd64.zip" > packer_${PACKER_VERSION}_SHA256SUMS && \
@@ -31,11 +31,11 @@ RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER
     unzip packer_${PACKER_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 
-ENV KOPS_VERSION=1.8.0
-ENV KUBECTL_VERSION=v1.8.4
+ENV KOPS_VERSION=1.8.1
+ENV KUBECTL_VERSION=v1.9.3
 
-ENV CONSUL_VERSION=1.0.1
-ENV CONSUL_SHA256SUM=eac5755a1d19e4b93f6ce30caaf7b3bd8add4557b143890b1c07f5614a667a68
+ENV CONSUL_VERSION=1.0.6
+ENV CONSUL_SHA256SUM=bcc504f658cef2944d1cd703eda90045e084a15752d23c038400cf98c716ea01
 
 RUN curl -LO https://github.com/kubernetes/kops/releases/download/$KOPS_VERSION/kops-linux-amd64 && \
     chmod +x kops-linux-amd64 && \
