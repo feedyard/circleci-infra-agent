@@ -18,17 +18,7 @@ control 'python packages' do
   describe command('pip list') do
     its('stdout') { should include ('boto3') }
     its('stdout') { should include ('awscli') }
-    its('stdout') { should include ('argparse') }
-    its('stdout') { should include ('jinja2') }
-  end
-end
-
-control 'docker-compose version' do
-  impact 1.0
-  title 'confirm docker-compose version installed'
-  desc 'confirm version reported by docker-compose matches the desired version'
-  describe command('docker-compose -v') do
-    its('stdout') { should include ('1.18') }
+    its('stdout') { should include ('Jinja2') }
   end
 end
 
@@ -64,7 +54,7 @@ control 'packer version' do
   title 'confirm packer version installed'
   desc 'confirm version reported by packer matches the desired version'
   describe command('packer -v') do
-    its('stdout') { should include ('1.1') }
+    its('stdout') { should include ('1.2') }
   end
 end
 
