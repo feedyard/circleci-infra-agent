@@ -10,20 +10,19 @@ AWS
 #### IaC packages
 
 **testing**  
-inspec (1.48.0)  
-awspec (1.0.0)    
+inspec 
+awspec     
 
 **build/deploy**  
-docker (17.10)  
-docker-compose (1.18)  
-packer (1.1.2)  
-terraform (0.11.1)  
-boto3 (1.4.7)  
-aws-cli (1.14)  
-ansible (2.4.1)  
-kops (1.8.0)  
-kubectl (1.8.4)  
-consul (1.0.1)  
+docker  
+docker-compose   
+packer   
+terraform   
+boto3   
+aws-cli   
+kops   
+kubectl   
+consul   
 
 
 ###### note

@@ -10,7 +10,7 @@ RUN apk add --no-cache jq groff less util-linux go
 # infrastructure specific build, deploy, test tools
 RUN pip install boto3 awscli argparse jinja2
 RUN echo "gem: --no-document" > /etc/gemrc
-RUN gem install awspec:1.4.1
+RUN gem install awspec:1.4.2
 
 # hashicorp
 ENV TERRAFORM_VERSION=0.11.3
