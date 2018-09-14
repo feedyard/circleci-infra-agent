@@ -1,30 +1,20 @@
 [![CircleCI](https://circleci.com/gh/feedyard/circleci-infra-agent.svg?style=shield)](https://circleci.com/gh/feedyard/circleci-infra-agent)
 [![Docker Repository on Quay](https://quay.io/repository/feedyard/circleci-infra-agent/status "Docker Repository on Quay")](https://quay.io/repository/feedyard/circleci-infra-agent)
-# circleci-infra-agent
-Docker image for circle-ci infrastructure pipelines
+# feedyard/circleci-base-agent
 
-#### Supported IaaS
+circleci primary container, based on feedyard/circleci-base-agent. includes common tools for buildiing and testing     
+aws or gcp infrastructure as code in circleci pipelines.  
 
-AWS
+See CHANGELOG for list of installed packages/versions  
 
-#### IaC packages
+## requirements for ci and local development
 
-**testing**  
-inspec 
-awspec     
+Environment variable FEEDYARD_PIPELINE_KEY used as encrypt/decrypt key for required secrets. Set matching var in  
+circleci repository and include local file `local.env` with the following access information.  
 
-**build/deploy**  
-docker  
-docker-compose   
-packer   
-terraform   
-boto3   
-aws-cli   
-kops   
-kubectl   
-consul   
+```$xslt
+FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER=
+FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN=
+```
 
-
-###### note
-Dockerfile currently pulls packages from public sources. Depending on your security profile this may not be appropriate.
-Consider deploying local mirrors for managing package validation and security.
+run (or review) `prereqs.sh` to install requirements for local development.  
