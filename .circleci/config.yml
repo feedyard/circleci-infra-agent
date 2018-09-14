@@ -6,10 +6,10 @@ jobs:
     environment:
       LIBRARY: quay.io/feedyard
       CONTAINER_NAME: circleci-infra-agent
-      VERSION: 3.7
-      BASH_ENV: .circlerc
+      VERSION: 3.8
+      BASH_ENV: local.env
     docker:
-      - image: feedyard/circleci-remote-docker
+      - image: quay.io/feedyard/circleci-base-agent
     steps:
       - checkout
       - setup_remote_docker
@@ -18,7 +18,7 @@ jobs:
           command: docker info
       - run:
           name: decrypt secrets
-          command: openssl aes-256-cbc -d -in secrets.ci -out .circlerc -k $KEY
+          command: openssl aes-256-cbc -d -in env.ci -out local.env -k $FEEDYARD_PIPELINE_KEY
       - run:
           name: build image
           command: docker build -t $LIBRARY/$CONTAINER_NAME:latest .
@@ -28,13 +28,12 @@ jobs:
       - run:
           name: configuration tests
           command: |
-            inspec exec profiles/cis-docker
-            CID="$(docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash)"
-            inspec exec profiles/circleci-infra-agent/ -t docker://$CID
+            CID="$(docker run -it -d --entrypoint ash $LIBRARY/$CONTAINER_NAME:latest)"
+            inspec exec profiles/$CONTAINER_NAME/ -t docker://$CID
             docker rm -f $CID
       - deploy:
           name: deploy to quay.io
           command: |
-            docker login -u $QUAY_USER -p $QUAY_PASS quay.io
+            docker login -u $FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER -p $FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN quay.io
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
             docker push $LIBRARY/$CONTAINER_NAME:latest
