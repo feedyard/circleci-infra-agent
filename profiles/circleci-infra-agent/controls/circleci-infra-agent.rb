@@ -1,16 +1,3 @@
-# control 'packages' do
-#   impact 1.0
-#   title 'confirm package installation'
-#   desc 'confirm all desired packages are installed'
-#   describe command('apk info') do
-#     its('stdout') { should include ('jq') }
-#     its('stdout') { should include ('groff') }
-#     its('stdout') { should include ('less') }
-#     its('stdout') { should include ('util-linux') }
-#     its('stdout') { should include ('go') }
-#   end
-# end
-
 control 'python packages' do
   impact 1.0
   title 'confirm python package installation'
@@ -36,7 +23,7 @@ control 'gcloud version' do
   title 'confirm gcloud version installed'
   desc 'confirm version reported by gcloud matches the desired version'
   describe command('gcloud version') do
-    its('stdout') { should include ('Google Cloud SDK 214') }
+    its('stdout') { should include ('Google Cloud SDK 221') }
   end
 end
 
@@ -54,6 +41,6 @@ control 'packer version' do
   title 'confirm packer version installed'
   desc 'confirm version reported by packer matches the desired version'
   describe command('packer -v') do
-    its('stdout') { should include ('1.2') }
+    its('stdout') { should include ('1.3') }
   end
 end
