@@ -16,7 +16,6 @@ testing or other frameworks:
 awspec  
 test-kitchen  
 kitchen-terraform  
-kitchen-inspec  
 kitchen-ec2  
 kitchen-google  
 jinja2  

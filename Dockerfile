@@ -5,7 +5,6 @@ LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 ENV AWSPEC_VERSION=1.9.0
 ENV TEST_KITCHEN_VERSION=1.23.2
 ENV KITCHEN_TERRAFORM_VERSION=4.0.3
-ENV KITCHEN_INSPEC_VERSION=0.24.0
 ENV KITCHEN_EC2_VERSION=2.3.1
 ENV KITCHEN_GOOGLE_VERSION=2.0.0
 # packages required for use as a circleci primary container
@@ -22,7 +21,6 @@ RUN gem install \
     awspec:${AWSPEC_VERSION} \
     test-kitchen:${TEST_KITCHEN_VERSION} \
     kitchen-terraform:${KITCHEN_TERRAFORM_VERSION} \
-    kitchen-inspec:${KITCHEN_INSPEC_VERSION} \
     kitchen-ec2:${KITCHEN_EC2_VERSION} \
     kitchen-google:${KITCHEN_GOOGLE_VERSION}
 

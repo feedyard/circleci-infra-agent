@@ -70,7 +70,7 @@ kitchen-google
 
 test-kitchen=1.23.2  
 kitchen-terraform=4.0.3  
-kitchen-inspec=0.24.0  
+kitchen-inspec=removed (does not support inspec v3)
 kitchen-ec2=2.3.1  
 kitchen-google=2.0.0  
 terraform=0.11.9  
