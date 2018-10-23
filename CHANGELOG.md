@@ -76,3 +76,7 @@ kitchen-google=2.0.0
 terraform=0.11.9  
 packer=1.3.1  
 CLOUD_SDK_VERSION=221.0.0  
+
+### 10-23-2018 package version
+
+terraform 0.11.10  
