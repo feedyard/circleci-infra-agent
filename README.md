@@ -28,8 +28,8 @@ Environment variable FEEDYARD_PIPELINE_KEY used as encrypt/decrypt key for requi
 circleci repository and include local file `local.env` with the following access information.  
 
 ```$xslt
-FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER=
-FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN=
+DOCKER_LOGIN=FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER
+DOCKER_PASSWORD=FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN
 ```
 
 run (or review) `prereqs.sh` to install requirements for local development.  
