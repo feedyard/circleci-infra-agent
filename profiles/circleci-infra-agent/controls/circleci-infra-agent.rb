@@ -23,7 +23,7 @@ control 'gcloud version' do
   title 'confirm gcloud version installed'
   desc 'confirm version reported by gcloud matches the desired version'
   describe command('gcloud version') do
-    its('stdout') { should include ('Google Cloud SDK 221') }
+    its('stdout') { should include ('Google Cloud SDK 228') }
   end
 end
 
