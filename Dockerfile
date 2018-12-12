@@ -1,14 +1,12 @@
-FROM quay.io/feedyard/circleci-base-agent:3.8.8
+FROM quay.io/feedyard/circleci-base-agent:4.0.0
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
-ENV AWSPEC_VERSION=1.9.0
-ENV TEST_KITCHEN_VERSION=1.23.2
-ENV KITCHEN_TERRAFORM_VERSION=4.0.3
-ENV KITCHEN_EC2_VERSION=2.3.1
-ENV KITCHEN_GOOGLE_VERSION=2.0.0
-# packages required for use as a circleci primary container
-# RUN apk add --no-cache groff less util-linux go
+ENV AWSPEC_VERSION=1.12.6
+ENV TEST_KITCHEN_VERSION=1.23.5
+ENV KITCHEN_TERRAFORM_VERSION=4.1.0
+ENV KITCHEN_EC2_VERSION=2.3.4
+ENV KITCHEN_GOOGLE_VERSION=2.0.1
 
 # infrastructure specific build, deploy, test tools
 RUN pip install \
@@ -34,8 +32,8 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-ENV PACKER_VERSION=1.3.1
-ENV PACKER_SHA256SUM=254cf648a638f7ebd37dc1b334abe940da30b30ac3465b6e0a9ad59829932fa3
+ENV PACKER_VERSION=1.3.3
+ENV PACKER_SHA256SUM=2e3ea8f366d676d6572ead7e0c773158dfea0aed9c6a740c669d447bcb48d65f
 
 RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip > packer_${PACKER_VERSION}_linux_amd64.zip && \
     echo "${PACKER_SHA256SUM}  packer_${PACKER_VERSION}_linux_amd64.zip" > packer_${PACKER_VERSION}_SHA256SUMS && \
@@ -44,7 +42,7 @@ RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER
     rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 
 # Google Cloud Platform
-ENV CLOUD_SDK_VERSION=221.0.0
+ENV CLOUD_SDK_VERSION=228.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
