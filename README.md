@@ -5,14 +5,14 @@
 circleci primary container, based on feedyard/circleci-base-agent. includes common tools for buildiing and testing     
 aws or gcp infrastructure as code in circleci pipelines.  
 
-infrastructure development:
+infrastructure development:  
 packer  
 terraform    
 aws-cli  
-boto3
-gcloud
-
-testing or other frameworks:
+boto3  
+gcloud  
+  
+testing or other frameworks:  
 awspec  
 test-kitchen  
 kitchen-terraform  
