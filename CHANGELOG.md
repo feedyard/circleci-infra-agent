@@ -80,3 +80,13 @@ CLOUD_SDK_VERSION=221.0.0
 ### 10-23-2018 package version
 
 terraform 0.11.10  
+packer 1.3.3
+CLOUD_SDK_VERSION=228.0.0  
+
+### 01-02-2019 package version changes and patch
+
+terraform 0.11.11  
+test-kitchen=1.24.0  
+kitchen-terraform=4.2.0  
+kitchen-ec2=2.4.0  
+kitcfhen-google=2.0.1  

@@ -1,11 +1,11 @@
-FROM quay.io/feedyard/circleci-base-agent:4.0.0
+FROM quay.io/feedyard/circleci-base-agent:4.1.0
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
-ENV AWSPEC_VERSION=1.12.6
-ENV TEST_KITCHEN_VERSION=1.23.5
-ENV KITCHEN_TERRAFORM_VERSION=4.1.0
-ENV KITCHEN_EC2_VERSION=2.3.4
+ENV AWSPEC_VERSION=1.13.0
+ENV TEST_KITCHEN_VERSION=1.24.0
+ENV KITCHEN_TERRAFORM_VERSION=4.2.0
+ENV KITCHEN_EC2_VERSION=2.4.0
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
 
 # infrastructure specific build, deploy, test tools
@@ -23,8 +23,8 @@ RUN gem install \
     kitchen-google:${KITCHEN_GOOGLE_VERSION}
 
 # hashicorp
-ENV TERRAFORM_VERSION=0.11.10
-ENV TERRAFORM_SHA256SUM=43543a0e56e31b0952ea3623521917e060f2718ab06fe2b2d506cfaa14d54527
+ENV TERRAFORM_VERSION=0.11.11
+ENV TERRAFORM_SHA256SUM=94504f4a67bad612b5c8e3a4b7ce6ca2772b3c1559630dfd71e9c519e3d6149c
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
