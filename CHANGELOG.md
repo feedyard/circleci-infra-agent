@@ -90,3 +90,7 @@ test-kitchen=1.24.0
 kitchen-terraform=4.2.0  
 kitchen-ec2=2.4.0  
 kitcfhen-google=2.0.1  
+
+### 01-05-2019 base image change
+
+quay.io/feedyard/circleci-base-agent:4.1.2
