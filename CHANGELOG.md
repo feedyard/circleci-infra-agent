@@ -94,3 +94,7 @@ kitcfhen-google=2.0.1
 ### 01-05-2019 base image change
 
 quay.io/feedyard/circleci-base-agent:4.1.2
+
+### 01-11-2019
+
+gem json 2.1.0

@@ -2,6 +2,7 @@ FROM quay.io/feedyard/circleci-base-agent:4.1.2
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
+ENV JSON_VERSION=2.1.0
 ENV AWSPEC_VERSION=1.13.0
 ENV TEST_KITCHEN_VERSION=1.24.0
 ENV KITCHEN_TERRAFORM_VERSION=4.2.0
@@ -16,6 +17,7 @@ RUN pip install \
     jinja2
 RUN echo "gem: --no-document" > /etc/gemrc
 RUN gem install \
+    json:${JSON_VERSION} \
     awspec:${AWSPEC_VERSION} \
     test-kitchen:${TEST_KITCHEN_VERSION} \
     kitchen-terraform:${KITCHEN_TERRAFORM_VERSION} \

@@ -9,6 +9,66 @@ control 'python packages' do
   end
 end
 
+control 'json' do
+  impact 1.0
+  title 'confirm json gem installed'
+  desc 'confirm version of json installed'
+  describe gem('json') do
+    it { should be_installed }
+    its('version') { should eq '2.1.0' }
+  end
+end
+
+control 'awspec' do
+  impact 1.0
+  title 'confirm awspec gem installed'
+  desc 'confirm version of awspec installed'
+  describe gem('awspec') do
+    it { should be_installed }
+    its('version') { should eq '1.13.0' }
+  end
+end
+
+control 'test-kitchen' do
+  impact 1.0
+  title 'confirm test-kitchen gem installed'
+  desc 'confirm version of test-kitchen installed'
+  describe gem('test-kitchen') do
+    it { should be_installed }
+    its('version') { should eq '1.24.0' }
+  end
+end
+
+control 'kitchen-terraform' do
+  impact 1.0
+  title 'confirm kitchen-terraform gem installed'
+  desc 'confirm version of kitchen-terraform installed'
+  describe gem('kitchen-terraform') do
+    it { should be_installed }
+    its('version') { should eq '4.2.0' }
+  end
+end
+
+control 'kitchen-ec2' do
+  impact 1.0
+  title 'confirm kitchen-ec2 gem installed'
+  desc 'confirm version of kitchen-ec2 installed'
+  describe gem('kitchen-ec2') do
+    it { should be_installed }
+    its('version') { should eq '2.4.0' }
+  end
+end
+
+control 'kitchen-google' do
+  impact 1.0
+  title 'confirm kitchen-google gem installed'
+  desc 'confirm version of kitchen-google installed'
+  describe gem('kitchen-google') do
+    it { should be_installed }
+    its('version') { should eq '2.0.1' }
+  end
+end
+
 control 'aws-cli version' do
   impact 1.0
   title 'confirm aws-cli version installed'
