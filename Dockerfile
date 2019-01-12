@@ -14,13 +14,13 @@ RUN apk add --virtual build-dependencies \
         build-base \
         ruby-dev \
         make && \
-RUN pip install \
+    pip install \
         boto3 \
         awscli \
         argparse \
-        jinja2
-RUN echo "gem: --no-document" > /etc/gemrc
-RUN gem install \
+        jinja2 && \
+    echo "gem: --no-document" > /etc/gemrc && \
+    gem install \
         json:${JSON_VERSION} \
         awspec:${AWSPEC_VERSION} \
         test-kitchen:${TEST_KITCHEN_VERSION} \
