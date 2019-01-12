@@ -10,19 +10,24 @@ ENV KITCHEN_EC2_VERSION=2.4.0
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
 
 # infrastructure specific build, deploy, test tools
+RUN apk add --virtual build-dependencies \
+        build-base \
+        ruby-dev \
+        make && \
 RUN pip install \
-    boto3 \
-    awscli \
-    argparse \
-    jinja2
+        boto3 \
+        awscli \
+        argparse \
+        jinja2
 RUN echo "gem: --no-document" > /etc/gemrc
 RUN gem install \
-    json:${JSON_VERSION} \
-    awspec:${AWSPEC_VERSION} \
-    test-kitchen:${TEST_KITCHEN_VERSION} \
-    kitchen-terraform:${KITCHEN_TERRAFORM_VERSION} \
-    kitchen-ec2:${KITCHEN_EC2_VERSION} \
-    kitchen-google:${KITCHEN_GOOGLE_VERSION}
+        json:${JSON_VERSION} \
+        awspec:${AWSPEC_VERSION} \
+        test-kitchen:${TEST_KITCHEN_VERSION} \
+        kitchen-terraform:${KITCHEN_TERRAFORM_VERSION} \
+        kitchen-ec2:${KITCHEN_EC2_VERSION} \
+        kitchen-google:${KITCHEN_GOOGLE_VERSION} &&\
+    apk del build-dependencies
 
 # hashicorp
 ENV TERRAFORM_VERSION=0.11.11
