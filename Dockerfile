@@ -1,4 +1,4 @@
-FROM quay.io/feedyard/circleci-base-agent:4.2.0
+FROM quay.io/feedyard/circleci-base-agent:4.3.0
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
@@ -8,9 +8,12 @@ ENV TEST_KITCHEN_VERSION=1.24.0
 ENV KITCHEN_TERRAFORM_VERSION=4.2.0
 ENV KITCHEN_EC2_VERSION=2.4.0
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
+ENV CHAMBER_VERSION=2.3.2
 
 # infrastructure specific build, deploy, test tools
-RUN apk add --virtual build-dependencies \
+RUN apk add --no-cache \
+        gnupg && \
+    apk add --virtual build-dependencies \
         build-base \
         ruby-dev \
         make && \
@@ -26,7 +29,9 @@ RUN apk add --virtual build-dependencies \
         test-kitchen:${TEST_KITCHEN_VERSION} \
         kitchen-terraform:${KITCHEN_TERRAFORM_VERSION} \
         kitchen-ec2:${KITCHEN_EC2_VERSION} \
-        kitchen-google:${KITCHEN_GOOGLE_VERSION} &&\
+        kitchen-google:${KITCHEN_GOOGLE_VERSION} && \
+    curl https://github.com/segmentio/chamber/releases/download/v${CHAMBER_VERSION}/chamber-v${CHAMBER_VERSION}-linux-amd64 > chamber-v${CHAMBER_VERSION}-linux-amd64 && \
+    mv chamber-v${CHAMBER_VERSION}-linux-amd64 /usr/bin/chamber && \
     apk del build-dependencies
 
 # hashicorp
