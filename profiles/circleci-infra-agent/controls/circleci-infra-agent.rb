@@ -1,3 +1,12 @@
+control 'packages' do
+  impact 1.0
+  title 'confirm package installation'
+  desc 'confirm all desired packages are installed'
+  describe command('apk info') do
+    its('stdout') { should include ('gnupg') }
+  end
+end
+
 control 'python packages' do
   impact 1.0
   title 'confirm python package installation'
@@ -102,5 +111,14 @@ control 'packer version' do
   desc 'confirm version reported by packer matches the desired version'
   describe command('packer -v') do
     its('stdout') { should include ('1.3') }
+  end
+end
+
+control 'chamber version' do
+  impact 1.0
+  title 'confirm chamber version installed'
+  desc 'confirm version reported by chamber matches the desired version'
+  describe command('chamber version') do
+    its('stdout') { should include ('2.3') }
   end
 end
