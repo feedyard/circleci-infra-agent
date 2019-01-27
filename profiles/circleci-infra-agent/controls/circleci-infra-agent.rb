@@ -113,12 +113,12 @@ control 'packer version' do
     its('stdout') { should include ('1.3') }
   end
 end
-
-control 'chamber version' do
-  impact 1.0
-  title 'confirm chamber version installed'
-  desc 'confirm version reported by chamber matches the desired version'
-  describe command('chamber version') do
-    its('stdout') { should include ('2.3') }
-  end
-end
+#
+# control 'chamber version' do
+#   impact 1.0
+#   title 'confirm chamber version installed'
+#   desc 'confirm version reported by chamber matches the desired version'
+#   describe command('chamber version') do
+#     its('stdout') { should include ('2.3') }
+#   end
+# end
