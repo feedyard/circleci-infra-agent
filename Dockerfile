@@ -30,7 +30,8 @@ RUN apk add --no-cache \
         kitchen-terraform:${KITCHEN_TERRAFORM_VERSION} \
         kitchen-ec2:${KITCHEN_EC2_VERSION} \
         kitchen-google:${KITCHEN_GOOGLE_VERSION} && \
-    curl https://github.com/segmentio/chamber/releases/download/v${CHAMBER_VERSION}/chamber-v${CHAMBER_VERSION}-linux-amd64 > chamber-v${CHAMBER_VERSION}-linux-amd64 && \
+    curl -LOs https://github.com/segmentio/chamber/releases/download/v${CHAMBER_VERSION}/chamber-v${CHAMBER_VERSION}-linux-amd64 > chamber-v${CHAMBER_VERSION}-linux-amd64 && \
+    chmod +x chamber-v${CHAMBER_VERSION}-linux-amd64 && \
     mv chamber-v${CHAMBER_VERSION}-linux-amd64 /usr/bin/chamber && \
     apk del build-dependencies
 
