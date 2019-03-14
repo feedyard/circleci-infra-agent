@@ -1,11 +1,11 @@
-FROM quay.io/feedyard/circleci-base-agent:4.3.0
+FROM quay.io/feedyard/circleci-base-agent:4.4.1
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
-ENV JSON_VERSION=2.1.0
-ENV AWSPEC_VERSION=1.13.0
+ENV JSON_VERSION=2.2.0
+ENV AWSPEC_VERSION=1.16.1
 ENV TEST_KITCHEN_VERSION=1.24.0
-ENV KITCHEN_TERRAFORM_VERSION=4.2.0
+ENV KITCHEN_TERRAFORM_VERSION=4.3.0
 ENV KITCHEN_EC2_VERSION=2.4.0
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
 ENV CHAMBER_VERSION=2.3.2
@@ -36,8 +36,8 @@ RUN apk add --no-cache \
     apk del build-dependencies
 
 # hashicorp
-ENV TERRAFORM_VERSION=0.11.11
-ENV TERRAFORM_SHA256SUM=94504f4a67bad612b5c8e3a4b7ce6ca2772b3c1559630dfd71e9c519e3d6149c
+ENV TERRAFORM_VERSION=0.11.13
+ENV TERRAFORM_SHA256SUM=5925cd4d81e7d8f42a0054df2aafd66e2ab7408dbed2bd748f0022cfe592f8d2
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
@@ -45,8 +45,8 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-ENV PACKER_VERSION=1.3.3
-ENV PACKER_SHA256SUM=2e3ea8f366d676d6572ead7e0c773158dfea0aed9c6a740c669d447bcb48d65f
+ENV PACKER_VERSION=1.3.5
+ENV PACKER_SHA256SUM=14922d2bca532ad6ee8e936d5ad0788eba96f773bcdcde8c2dc7c95f830841ec
 
 RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip > packer_${PACKER_VERSION}_linux_amd64.zip && \
     echo "${PACKER_SHA256SUM}  packer_${PACKER_VERSION}_linux_amd64.zip" > packer_${PACKER_VERSION}_SHA256SUMS && \
@@ -55,7 +55,7 @@ RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER
     rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 
 # Google Cloud Platform
-ENV CLOUD_SDK_VERSION=228.0.0
+ENV CLOUD_SDK_VERSION=238.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \

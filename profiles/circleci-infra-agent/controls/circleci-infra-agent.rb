@@ -24,7 +24,7 @@ control 'json' do
   desc 'confirm version of json installed'
   describe gem('json') do
     it { should be_installed }
-    its('version') { should eq '2.1.0' }
+    its('version') { should eq '2.2.0' }
   end
 end
 
@@ -34,7 +34,7 @@ control 'awspec' do
   desc 'confirm version of awspec installed'
   describe gem('awspec') do
     it { should be_installed }
-    its('version') { should eq '1.13.0' }
+    its('version') { should eq '1.16.1' }
   end
 end
 
@@ -54,7 +54,7 @@ control 'kitchen-terraform' do
   desc 'confirm version of kitchen-terraform installed'
   describe gem('kitchen-terraform') do
     it { should be_installed }
-    its('version') { should eq '4.2.0' }
+    its('version') { should eq '4.3.0' }
   end
 end
 
@@ -92,7 +92,7 @@ control 'gcloud version' do
   title 'confirm gcloud version installed'
   desc 'confirm version reported by gcloud matches the desired version'
   describe command('gcloud version') do
-    its('stdout') { should include ('Google Cloud SDK 228') }
+    its('stdout') { should include ('Google Cloud SDK 238') }
   end
 end
 
@@ -101,7 +101,7 @@ control 'terraform version' do
   title 'confirm terraform version installed'
   desc 'confirm version reported by terraform matches the desired version'
   describe command('terraform -v') do
-    its('stdout') { should include ('0.11') }
+    its('stdout') { should include ('0.11.13') }
   end
 end
 
