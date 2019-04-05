@@ -1,27 +1,26 @@
-FROM quay.io/feedyard/circleci-base-agent:4.4.1
+#FROM quay.io/feedyard/circleci-base-agent:4.4.1
+FROM local/circleci-base-agent:latest
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
 ENV JSON_VERSION=2.2.0
-ENV AWSPEC_VERSION=1.16.1
-ENV TEST_KITCHEN_VERSION=1.24.0
+ENV AWSPEC_VERSION=1.17.3
+ENV TEST_KITCHEN_VERSION=2.0.1
 ENV KITCHEN_TERRAFORM_VERSION=4.3.0
-ENV KITCHEN_EC2_VERSION=2.4.0
+ENV KITCHEN_EC2_VERSION=2.5.0
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
 ENV CHAMBER_VERSION=2.3.2
 
 # infrastructure specific build, deploy, test tools
-RUN apk add --no-cache \
-        gnupg && \
-    apk add --virtual build-dependencies \
+RUN apk add --no-cache --virtual build-dependencies \
         build-base \
         ruby-dev \
         make && \
     pip install \
-        boto3 \
-        awscli \
-        argparse \
-        jinja2 && \
+        boto3=1.9.130 \
+        awscli=1.16.140 \
+        argparse=1.4.0 \
+        jinja2=2.10 && \
     echo "gem: --no-document" > /etc/gemrc && \
     gem install \
         json:${JSON_VERSION} \
@@ -55,7 +54,7 @@ RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER
     rm -f packer_${PACKER_VERSION}_linux_amd64.zip
 
 # Google Cloud Platform
-ENV CLOUD_SDK_VERSION=238.0.0
+ENV CLOUD_SDK_VERSION=241.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
