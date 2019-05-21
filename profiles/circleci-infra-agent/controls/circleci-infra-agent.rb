@@ -34,7 +34,7 @@ control 'awspec' do
   desc 'confirm version of awspec installed'
   describe gem('awspec') do
     it { should be_installed }
-    its('version') { should eq '1.17' }
+    its('version') { should eq '1.17.4' }
   end
 end
 
@@ -44,7 +44,7 @@ control 'test-kitchen' do
   desc 'confirm version of test-kitchen installed'
   describe gem('test-kitchen') do
     it { should be_installed }
-    its('version') { should eq '2.2' }
+    its('version') { should eq '2.2.5' }
   end
 end
 
@@ -54,7 +54,7 @@ control 'kitchen-terraform' do
   desc 'confirm version of kitchen-terraform installed'
   describe gem('kitchen-terraform') do
     it { should be_installed }
-    its('version') { should eq '4.8' }
+    its('version') { should eq '4.8.1' }
   end
 end
 
@@ -64,7 +64,7 @@ control 'kitchen-ec2' do
   desc 'confirm version of kitchen-ec2 installed'
   describe gem('kitchen-ec2') do
     it { should be_installed }
-    its('version') { should eq '3.0' }
+    its('version') { should eq '3.0.1' }
   end
 end
 
