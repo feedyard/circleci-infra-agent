@@ -16,8 +16,8 @@ RUN apk add --no-cache --virtual build-dependencies \
         ruby-dev=2.5.5-r0 \
         make=4.2.1-r2 && \
     pip install \
-        boto3==1.9.151 \
-        awscli==1.16.161 \
+        boto3==1.9.152 \
+        awscli==1.16.162 \
         argparse==1.4.0 \
         jinja2==2.10.1 && \
     echo "gem: --no-document" > /etc/gemrc && \
