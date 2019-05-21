@@ -34,7 +34,7 @@ control 'awspec' do
   desc 'confirm version of awspec installed'
   describe gem('awspec') do
     it { should be_installed }
-    its('version') { should eq '1.16.1' }
+    its('version') { should eq '1.17' }
   end
 end
 
@@ -44,7 +44,7 @@ control 'test-kitchen' do
   desc 'confirm version of test-kitchen installed'
   describe gem('test-kitchen') do
     it { should be_installed }
-    its('version') { should eq '1.24.0' }
+    its('version') { should eq '2.2' }
   end
 end
 
@@ -54,7 +54,7 @@ control 'kitchen-terraform' do
   desc 'confirm version of kitchen-terraform installed'
   describe gem('kitchen-terraform') do
     it { should be_installed }
-    its('version') { should eq '4.3.0' }
+    its('version') { should eq '4.8' }
   end
 end
 
@@ -64,7 +64,7 @@ control 'kitchen-ec2' do
   desc 'confirm version of kitchen-ec2 installed'
   describe gem('kitchen-ec2') do
     it { should be_installed }
-    its('version') { should eq '2.4.0' }
+    its('version') { should eq '3.0' }
   end
 end
 
@@ -92,7 +92,7 @@ control 'gcloud version' do
   title 'confirm gcloud version installed'
   desc 'confirm version reported by gcloud matches the desired version'
   describe command('gcloud version') do
-    its('stdout') { should include ('Google Cloud SDK 241') }
+    its('stdout') { should include ('Google Cloud SDK 246') }
   end
 end
 
@@ -101,7 +101,7 @@ control 'terraform version' do
   title 'confirm terraform version installed'
   desc 'confirm version reported by terraform matches the desired version'
   describe command('terraform -v') do
-    its('stdout') { should include ('0.11.13') }
+    its('stdout') { should include ('0.11.14') }
   end
 end
 
@@ -110,7 +110,7 @@ control 'packer version' do
   title 'confirm packer version installed'
   desc 'confirm version reported by packer matches the desired version'
   describe command('packer -v') do
-    its('stdout') { should include ('1.3') }
+    its('stdout') { should include ('1.4') }
   end
 end
 
