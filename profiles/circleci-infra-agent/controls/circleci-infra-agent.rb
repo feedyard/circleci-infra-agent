@@ -39,16 +39,6 @@ control 'test-kitchen' do
   end
 end
 
-control 'kitchen-terraform' do
-  impact 1.0
-  title 'confirm kitchen-terraform gem installed'
-  desc 'confirm version of kitchen-terraform installed'
-  describe gem('kitchen-terraform') do
-    it { should be_installed }
-    its('version') { should eq '4.8.1' }
-  end
-end
-
 control 'kitchen-ec2' do
   impact 1.0
   title 'confirm kitchen-ec2 gem installed'
