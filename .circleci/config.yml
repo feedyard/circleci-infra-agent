@@ -13,7 +13,7 @@ workflows:
           context: executor-publishing
           image: feedyard/circleci-infra-agent
           registry: quay.io
-          after_build:
+          after-build:
             - run:
                 name: configuration testing of the image
                 command: |
