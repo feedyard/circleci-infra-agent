@@ -1,3 +1,7 @@
+.*
+Dockerfile.unpinned
+Gemfile
 README.md
-secrets.*
-.gitignore
+requirements.txt
+tasks.py
+testlocal.sh

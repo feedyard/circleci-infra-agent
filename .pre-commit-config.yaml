@@ -15,3 +15,11 @@ repos:
         entry: git-secrets
         language: system
         args: ["--scan"]
+  - repo: local
+    hooks:
+      - id: hadolint
+        name: hadolint
+        entry: hadolint
+        language: system
+        exclude: ^Dockerfile.unpinned
+        files: ^Dockerfile

@@ -340,3 +340,8 @@ terraform 0.11.14
 GCLOUS SDK 246.0.0
 packer 1.4.1
 
+### 06-07-2019 new base image, package updates
+
+feedyard/circleci-base-agent:4.5.0
+awscli 1.16.164
+boto3 1.9.164

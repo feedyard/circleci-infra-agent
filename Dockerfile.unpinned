@@ -1,11 +1,10 @@
-FROM quay.io/feedyard/circleci-base-agent:4.4.2
+FROM quay.io/feedyard/circleci-base-agent:4.5.0
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
 ENV JSON_VERSION=2.2.0
 ENV AWSPEC_VERSION=1.17.4
 ENV TEST_KITCHEN_VERSION=2.2.5
-ENV KITCHEN_TERRAFORM_VERSION=4.8.1
 ENV KITCHEN_EC2_VERSION=3.0.2
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
 ENV CHAMBER_VERSION=2.3.3
@@ -25,7 +24,6 @@ RUN apk add --no-cache --virtual build-dependencies \
         json \
         awspec \
         test-kitchen \
-        kitchen-terraform \
         kitchen-ec2 \
         kitchen-google && \
     curl -LOs https://github.com/segmentio/chamber/releases/download/v${CHAMBER_VERSION}/chamber-v${CHAMBER_VERSION}-linux-amd64 > chamber-v${CHAMBER_VERSION}-linux-amd64 && \

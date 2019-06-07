@@ -1,35 +1,14 @@
-[![CircleCI](https://circleci.com/gh/feedyard/circleci-infra-agent.svg?style=shield)](https://circleci.com/gh/feedyard/circleci-infra-agent)
-[![Docker Repository on Quay](https://quay.io/repository/feedyard/circleci-infra-agent/status "Docker Repository on Quay")](https://quay.io/repository/feedyard/circleci-infra-agent)
-# feedyard/circleci-base-agent
+# feedyard/circleci-infra-agent [![CircleCI](https://circleci.com/gh/feedyard/circleci-infra-agent.svg?style=svg)](https://circleci.com/gh/feedyard/circleci-infra-agent) [![Docker Repository on Quay](https://quay.io/repository/feedyard/circleci-infra-agent/status "Docker Repository on Quay")](https://quay.io/repository/feedyard/circleci-infra-agent) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/feedyard/circleci-infra-agent/master/LICENSE) [![Base Image](https://img.shields.io/badge/FROM-alpine-blue.svg)](https://alpinelinux.org)
 
-circleci primary container, based on feedyard/circleci-base-agent. includes common tools for buildiing and testing     
-aws or gcp infrastructure as code in circleci pipelines.  
+Based on [feedyard/circleci-base-agent](https://github.com/feedyard/circleci-base-agent). includes common tools for buildiing and testing
+aws or gcp infrastructure as code in circleci pipelines.
 
-infrastructure development:  
-packer  
-terraform    
-aws-cli  
-boto3  
-gcloud  
-  
-testing or other frameworks:  
-awspec  
-test-kitchen  
-kitchen-terraform  
-kitchen-ec2  
-kitchen-google  
-jinja2  
-  
-See CHANGELOG for list of installed packages/versions  
+apk/bin   | gem            | pip
+----------|----------------|----
+terraform | json           | boto3
+packer    | awspec         | awscli
+gcloud    | test-kitchen   | argparse
+chamber   | kitchen-ec2    | jinja2
+          | kitchen-google |
 
-## requirements for ci and local development
-
-Environment variable FEEDYARD_PIPELINE_KEY used as encrypt/decrypt key for required secrets. Set matching var in  
-circleci repository and include local file `local.env` with the following access information.  
-
-```$xslt
-DOCKER_LOGIN=FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER
-DOCKER_PASSWORD=FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN
-```
-
-run (or review) `prereqs.sh` to install requirements for local development.  
+See CHANGELOG for list of installed packages/versions

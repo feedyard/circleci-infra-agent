@@ -1,12 +1,3 @@
-control 'packages' do
-  impact 1.0
-  title 'confirm package installation'
-  desc 'confirm all desired packages are installed'
-  describe command('apk info') do
-    its('stdout') { should include ('gnupg') }
-  end
-end
-
 control 'python packages' do
   impact 1.0
   title 'confirm python package installation'
