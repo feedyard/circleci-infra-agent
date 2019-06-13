@@ -345,3 +345,8 @@ packer 1.4.1
 feedyard/circleci-base-agent:4.5.0
 awscli 1.16.164
 boto3 1.9.164
+
+### 06-13-2019 terraform 12 update, add aws-iam-authenticator
+
+TERRAFORM_VERSION=0.12.2
+AWS_IAM_AUTHENTICATOR_VERSION=1.12.7

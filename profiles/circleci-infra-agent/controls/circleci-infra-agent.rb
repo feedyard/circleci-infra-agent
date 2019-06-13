@@ -82,7 +82,7 @@ control 'terraform version' do
   title 'confirm terraform version installed'
   desc 'confirm version reported by terraform matches the desired version'
   describe command('terraform -v') do
-    its('stdout') { should include ('0.11.14') }
+    its('stdout') { should include ('0.12') }
   end
 end
 
@@ -101,5 +101,14 @@ control 'chamber version' do
   desc 'confirm version reported by chamber matches the desired version'
   describe command('chamber version') do
     its('stdout') { should include ('2.3') }
+  end
+end
+
+control 'aws-iam-authenticator version' do
+  impact 1.0
+  title 'confirm aws-iam-authenticator version installed'
+  desc 'confirm version reported by aws-iam-authenticator matches the desired version'
+  describe command('aws-iam-authenticator') do
+    its('exit_status') { should eq 0 }
   end
 end

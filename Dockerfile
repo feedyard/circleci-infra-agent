@@ -8,6 +8,8 @@ ENV TEST_KITCHEN_VERSION=2.2.5
 ENV KITCHEN_EC2_VERSION=3.0.1
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
 ENV CHAMBER_VERSION=2.3.3
+ENV AWS_IAM_AUTHENTICATOR_VERSION=1.12.7
+ENV AWS_IAM_AUTHENTICATOR_RELEASE_DATE=2019-03-27
 
 # infrastructure specific build, deploy, test tools
 RUN apk add --no-cache --virtual build-dependencies \
@@ -29,11 +31,14 @@ RUN apk add --no-cache --virtual build-dependencies \
     curl -LOs https://github.com/segmentio/chamber/releases/download/v${CHAMBER_VERSION}/chamber-v${CHAMBER_VERSION}-linux-amd64 > chamber-v${CHAMBER_VERSION}-linux-amd64 && \
     chmod +x chamber-v${CHAMBER_VERSION}-linux-amd64 && \
     mv chamber-v${CHAMBER_VERSION}-linux-amd64 /usr/bin/chamber && \
+    curl -SLO https://amazon-eks.s3-us-west-2.amazonaws.com/${AWS_IAM_AUTHENTICATOR_VERSION}/${AWS_IAM_AUTHENTICATOR_RELEASE_DATE}/bin/linux/amd64/aws-iam-authenticator && \
+    chmod +x aws-iam-authenticator && \
+    mv aws-iam-authenticator /usr/bin && \
     apk del build-dependencies
 
 # hashicorp
-ENV TERRAFORM_VERSION=0.11.14
-ENV TERRAFORM_SHA256SUM=9b9a4492738c69077b079e595f5b2a9ef1bc4e8fb5596610f69a6f322a8af8dd
+ENV TERRAFORM_VERSION=0.12.2
+ENV TERRAFORM_SHA256SUM=d9a96b646420d7f0a80aa5d51bb7b2a125acead537ab13c635f76668de9b8e32
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
