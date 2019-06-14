@@ -3,12 +3,12 @@
 Based on [feedyard/circleci-base-agent](https://github.com/feedyard/circleci-base-agent). includes common tools for buildiing and testing
 aws or gcp infrastructure as code in circleci pipelines.
 
-apk/bin   | gem            | pip
-----------|----------------|----
-terraform | json           | boto3
-packer    | awspec         | awscli
-gcloud    | test-kitchen   | argparse
-chamber   | kitchen-ec2    | jinja2
-          | kitchen-google |
+apk/bin               | gem            | pip
+----------------------|----------------|----
+terraform             | json           | boto3
+packer                | awspec         | awscli
+gcloud                | test-kitchen   | argparse
+chamber               | kitchen-ec2    | jinja2
+aws-iam-authenticator | kitchen-google |
 
 See CHANGELOG for list of installed packages/versions
