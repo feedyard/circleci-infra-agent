@@ -346,8 +346,9 @@ feedyard/circleci-base-agent:4.5.0
 awscli 1.16.164
 boto3 1.9.164
 
-### 06-13-2019 terraform 12 update, add aws-iam-authenticator, package updates
+### 06-14-2019 terraform 12 update, add aws-iam-authenticator, package updates
 
 TERRAFORM_VERSION=0.12.2
 AWS_IAM_AUTHENTICATOR_VERSION=1.12.7
-awscli 1.16.
+awscli 1.16.179
+boto3 1.9.69
