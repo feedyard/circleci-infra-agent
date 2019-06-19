@@ -1,4 +1,4 @@
-FROM quay.io/feedyard/circleci-base-agent:4.8.0
+FROM quay.io/feedyard/circleci-base-agent:4.9.0
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
@@ -17,8 +17,8 @@ RUN apk add --no-cache --virtual build-dependencies \
         ruby-dev=2.5.5-r0 \
         make=4.2.1-r2 && \
     pip install \
-        boto3==1.9.169 \
-        awscli==1.16.179 \
+        boto3==1.9.172 \
+        awscli==1.16.182 \
         argparse==1.4.0 \
         jinja2==2.10.1 && \
     echo "gem: --no-document" > /etc/gemrc && \

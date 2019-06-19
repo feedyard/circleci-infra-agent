@@ -5,10 +5,10 @@ aws or gcp infrastructure as code in circleci pipelines.
 
 apk/bin               | gem            | pip
 ----------------------|----------------|----
-terraform             | json           | boto3
+terraform 0.12        | json           | boto3
 packer                | awspec         | awscli
 gcloud                | test-kitchen   | argparse
 chamber               | kitchen-ec2    | jinja2
 aws-iam-authenticator | kitchen-google |
 
-See CHANGELOG for list of installed packages/versions
+See CHANGELOG for list of installed packages/versions. (version 4.4.0 and earlier for terraform 0.11)

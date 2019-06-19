@@ -352,3 +352,9 @@ TERRAFORM_VERSION=0.12.2
 AWS_IAM_AUTHENTICATOR_VERSION=1.12.7
 awscli 1.16.179
 boto3 1.9.69
+
+### 06-19-2019 release version 4.6.0
+
+feedyard/circleci-base-image:4.9.0
+awscli 1.16.182
+boto3 1.9.172
