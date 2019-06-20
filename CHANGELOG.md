@@ -358,3 +358,9 @@ boto3 1.9.69
 feedyard/circleci-base-image:4.9.0
 awscli 1.16.182
 boto3 1.9.172
+
+### 06-20-2019 release version 4.7.0
+
+tflint v0.8.3
+awscli 1.16.183
+boto3 1.9.173

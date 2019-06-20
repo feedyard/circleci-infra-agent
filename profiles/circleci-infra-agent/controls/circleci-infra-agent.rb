@@ -112,3 +112,12 @@ control 'aws-iam-authenticator version' do
     its('exit_status') { should eq 0 }
   end
 end
+
+control 'tflint version' do
+  impact 1.0
+  title 'confirm tflint version installed'
+  desc 'confirm version reported by tflint matches the desired version'
+  describe command('tflint -v') do
+    its('stdout') { should include ('0.8') }
+  end
+end

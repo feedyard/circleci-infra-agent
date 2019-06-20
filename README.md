@@ -10,5 +10,6 @@ packer                | awspec         | awscli
 gcloud                | test-kitchen   | argparse
 chamber               | kitchen-ec2    | jinja2
 aws-iam-authenticator | kitchen-google |
+tflint                |                |
 
 See CHANGELOG for list of installed packages/versions. (version 4.4.0 and earlier for terraform 0.11)

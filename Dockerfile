@@ -10,6 +10,7 @@ ENV KITCHEN_GOOGLE_VERSION=2.0.1
 ENV CHAMBER_VERSION=2.3.3
 ENV AWS_IAM_AUTHENTICATOR_VERSION=1.12.7
 ENV AWS_IAM_AUTHENTICATOR_RELEASE_DATE=2019-03-27
+ENV TFLINT_VERSION=0.8.3
 
 # infrastructure specific build, deploy, test tools
 RUN apk add --no-cache --virtual build-dependencies \
@@ -17,8 +18,8 @@ RUN apk add --no-cache --virtual build-dependencies \
         ruby-dev=2.5.5-r0 \
         make=4.2.1-r2 && \
     pip install \
-        boto3==1.9.172 \
-        awscli==1.16.182 \
+        boto3==1.9.173 \
+        awscli==1.16.183 \
         argparse==1.4.0 \
         jinja2==2.10.1 && \
     echo "gem: --no-document" > /etc/gemrc && \
@@ -34,6 +35,8 @@ RUN apk add --no-cache --virtual build-dependencies \
     curl -SLO https://amazon-eks.s3-us-west-2.amazonaws.com/${AWS_IAM_AUTHENTICATOR_VERSION}/${AWS_IAM_AUTHENTICATOR_RELEASE_DATE}/bin/linux/amd64/aws-iam-authenticator && \
     chmod +x aws-iam-authenticator && \
     mv aws-iam-authenticator /usr/bin && \
+    curl -SLO https://github.com/wata727/tflint/releases/download/v${TFLINT_VERSION}/tflint_linux_amd64.zip > tflint_linux_amd64.zip && \
+    unzip tflint_linux_amd64.zip -d /usr/bin && \
     apk del build-dependencies
 
 # hashicorp
