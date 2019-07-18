@@ -1,2 +1,4 @@
 invoke
+awscli
+jinja2
 pre-commit

@@ -68,14 +68,14 @@ control 'aws-cli version' do
   end
 end
 
-control 'gcloud version' do
-  impact 1.0
-  title 'confirm gcloud version installed'
-  desc 'confirm version reported by gcloud matches the desired version'
-  describe command('gcloud version') do
-    its('stdout') { should include ('Google Cloud SDK 246') }
-  end
-end
+# control 'gcloud version' do
+#   impact 1.0
+#   title 'confirm gcloud version installed'
+#   desc 'confirm version reported by gcloud matches the desired version'
+#   describe command('gcloud version') do
+#     its('stdout') { should include ('Google Cloud SDK 254') }
+#   end
+# end
 
 control 'terraform version' do
   impact 1.0
@@ -118,6 +118,6 @@ control 'tflint version' do
   title 'confirm tflint version installed'
   desc 'confirm version reported by tflint matches the desired version'
   describe command('tflint -v') do
-    its('stdout') { should include ('0.8') }
+    its('stdout') { should include ('0.9') }
   end
 end
