@@ -1,109 +1,54 @@
-# Change Log
 
-### 06-07-2017 Initial build automation
 
-alpine:3.6
 
-Additional installed packages:
-ca-certificates (20161130-r2)
-git (2.13.0-r0)
-gzip (1.8-r0)
-openssh (7.5_p1-r1)
-tar (1.29-r1)
-curl (7.54.0-r0)
-wget (1.19.1-r2)
-openrc (0.24.1-r2)
-openssl (1.0.2k-r0)
-python3 (3.6.1-r2)
-setuptools (36.0.1)
-docker (17.05.0-r0)
-docker-compose (1.13)
+# CHANGELOG
 
-### 06-11-2017 add ruby and inspec for testing strategies
+### 09-12-2019
 
-Additional installed packages:
-ruby (2.4.1-r3)
-ruby-bundler (1.15.0-r0)
-ruby-dev (2.4.1-r3)
-g++ (6.3.0-r4)
-libffi-dev (3.2.1-r3)
-musl-dev (1.1.16-r9)
-make (4.2.1-r0)
-gem install inspec -v 1.27.0
+FROM quay.io/feedyard/circleci-base-agent:4.12.0
 
-### 08-14-2017 patch//version update
+JSON_VERSION=2.2.0
+AWSPEC_VERSION=1.18.1
+TEST_KITCHEN_VERSION=2.3.2
+KITCHEN_EC2_VERSION=3.1.0
+CHAMBER_VERSION=2.5.0
+AWS_IAM_AUTHENTICATOR_VERSION=1.14.6
+AWS_IAM_AUTHENTICATOR_RELEASE_DATE=2019-08-22
+TFLINT_VERSION=0.11.1
+boto3=1.9.228
+awscli=1.16.238
 
-version changes
-git (2.13.5-r0)
-curl (7.55.0-r0)
-setuptools (36.2.7)
-docker-compose (1.15)
-musl-dev (1.1.16-r13)
-gem install inspec -v 1.33.1
 
-### 09-01-2017 redefine as infra-agent definition and move to new repo
+### 06-20-2019 release version 4.7.0
 
-### 12-17-2017 Alpine 3.7 update
+tflint v0.8.3
+awscli 1.16.183
+boto3 1.9.173
 
-...removing past package history with build process change
+### 06-19-2019 release version 4.6.0
 
-### 09-14-2018  alpine 3.8, on new base
+feedyard/circleci-base-image:4.9.0
+awscli 1.16.182
+boto3 1.9.172
 
-alpine 3.8
+### 06-14-2019 terraform 12 update, add aws-iam-authenticator, package updates
 
-boto3
-awscli
-argparse
-jinja2
-terraform
-packer
-gcloud SDK
+TERRAFORM_VERSION=0.12.2
+AWS_IAM_AUTHENTICATOR_VERSION=1.12.7
+awscli 1.16.179
+boto3 1.9.69
 
-awspec
-test-kitchen
-kitchen-insepc
-kitchen-terraform
-kitchen-ec2
-kitchen-google
+### 06-07-2019 new base image, package updates
 
-### 10-22-2018 package version changes and patch
+feedyard/circleci-base-agent:4.5.0
+awscli 1.16.164
+boto3 1.9.164
 
-test-kitchen=1.23.2
-kitchen-terraform=4.0.3
-kitchen-inspec=removed (does not support inspec v3)
-kitchen-ec2=2.3.1
-kitchen-google=2.0.0
-terraform=0.11.9
-packer=1.3.1
-CLOUD_SDK_VERSION=221.0.0
+### 05-18-2019 package updates
 
-### 10-23-2018 package version
-
-terraform 0.11.10
-packer 1.3.3
-CLOUD_SDK_VERSION=228.0.0
-
-### 01-02-2019 package version changes and patch
-
-terraform 0.11.11
-test-kitchen=1.24.0
-kitchen-terraform=4.2.0
-kitchen-ec2=2.4.0
-kitcfhen-google=2.0.1
-
-### 01-05-2019 base image change
-
-quay.io/feedyard/circleci-base-agent:4.1.2
-
-### 01-11-2019
-
-gem json 2.1.0
-
-### 01-25-2019 patch, package upgrade, add Chamber
-
-quay.io/feedyard/circleci-base-agent:4.3.0
-chamber (2.3.2)
-
+terraform 0.11.14
+GCLOUS SDK 246.0.0
+packer 1.4.1
 
 ### 04-05-2019 Publish version 4.4.0
 
@@ -334,33 +279,106 @@ TERRAFORM_VERSION=0.11.13
 PACKER_VERSION=1.3.5
 CLOUD_SDK_VERSION=241.0.0
 
-### 05-18-2019 package updates
+### 01-25-2019 patch, package upgrade, add Chamber
 
-terraform 0.11.14
-GCLOUS SDK 246.0.0
-packer 1.4.1
+quay.io/feedyard/circleci-base-agent:4.3.0
+chamber (2.3.2)
 
-### 06-07-2019 new base image, package updates
+### 01-11-2019
 
-feedyard/circleci-base-agent:4.5.0
-awscli 1.16.164
-boto3 1.9.164
+gem json 2.1.0
 
-### 06-14-2019 terraform 12 update, add aws-iam-authenticator, package updates
+### 01-05-2019 base image change
 
-TERRAFORM_VERSION=0.12.2
-AWS_IAM_AUTHENTICATOR_VERSION=1.12.7
-awscli 1.16.179
-boto3 1.9.69
+quay.io/feedyard/circleci-base-agent:4.1.2
 
-### 06-19-2019 release version 4.6.0
+### 01-02-2019 package version changes and patch
 
-feedyard/circleci-base-image:4.9.0
-awscli 1.16.182
-boto3 1.9.172
+terraform 0.11.11
+test-kitchen=1.24.0
+kitchen-terraform=4.2.0
+kitchen-ec2=2.4.0
+kitcfhen-google=2.0.1
 
-### 06-20-2019 release version 4.7.0
+### 10-23-2018 package version
 
-tflint v0.8.3
-awscli 1.16.183
-boto3 1.9.173
+terraform 0.11.10
+packer 1.3.3
+CLOUD_SDK_VERSION=228.0.0
+
+### 10-22-2018 package version changes and patch
+
+test-kitchen=1.23.2
+kitchen-terraform=4.0.3
+kitchen-inspec=removed (does not support inspec v3)
+kitchen-ec2=2.3.1
+kitchen-google=2.0.0
+terraform=0.11.9
+packer=1.3.1
+CLOUD_SDK_VERSION=221.0.0
+
+### 09-14-2018  alpine 3.8, on new base
+
+alpine 3.8
+
+boto3
+awscli
+argparse
+jinja2
+terraform
+packer
+gcloud SDK
+
+awspec
+test-kitchen
+kitchen-insepc
+kitchen-terraform
+kitchen-ec2
+kitchen-google
+
+### 12-17-2017 Alpine 3.7 update
+
+...removing past package history with build process change
+
+### 09-01-2017 redefine as infra-agent definition and move to new repo
+
+### 08-14-2017 patch//version update
+
+version changes
+git (2.13.5-r0)
+curl (7.55.0-r0)
+setuptools (36.2.7)
+docker-compose (1.15)
+musl-dev (1.1.16-r13)
+gem install inspec -v 1.33.1
+
+### 06-11-2017 add ruby and inspec for testing strategies
+
+Additional installed packages:
+ruby (2.4.1-r3)
+ruby-bundler (1.15.0-r0)
+ruby-dev (2.4.1-r3)
+g++ (6.3.0-r4)
+libffi-dev (3.2.1-r3)
+musl-dev (1.1.16-r9)
+make (4.2.1-r0)
+gem install inspec -v 1.27.0
+
+### 06-07-2017 Initial build automation
+
+alpine:3.6
+
+Additional installed packages:
+ca-certificates (20161130-r2)
+git (2.13.0-r0)
+gzip (1.8-r0)
+openssh (7.5_p1-r1)
+tar (1.29-r1)
+curl (7.54.0-r0)
+wget (1.19.1-r2)
+openrc (0.24.1-r2)
+openssl (1.0.2k-r0)
+python3 (3.6.1-r2)
+setuptools (36.0.1)
+docker (17.05.0-r0)
+docker-compose (1.13)

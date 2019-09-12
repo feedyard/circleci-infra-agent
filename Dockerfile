@@ -1,16 +1,16 @@
-FROM quay.io/feedyard/circleci-base-agent:4.10.0
+FROM quay.io/feedyard/circleci-base-agent:4.12.0
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>
 
 ENV JSON_VERSION=2.2.0
-ENV AWSPEC_VERSION=1.17.4
-ENV TEST_KITCHEN_VERSION=2.2.5
-ENV KITCHEN_EC2_VERSION=3.0.1
+ENV AWSPEC_VERSION=1.18.1
+ENV TEST_KITCHEN_VERSION=2.3.2
+ENV KITCHEN_EC2_VERSION=3.1.0
 ENV KITCHEN_GOOGLE_VERSION=2.0.1
-ENV CHAMBER_VERSION=2.3.3
-ENV AWS_IAM_AUTHENTICATOR_VERSION=1.13.7
-ENV AWS_IAM_AUTHENTICATOR_RELEASE_DATE=2019-06-11
-ENV TFLINT_VERSION=0.9.1
+ENV CHAMBER_VERSION=2.5.0
+ENV AWS_IAM_AUTHENTICATOR_VERSION=1.14.6
+ENV AWS_IAM_AUTHENTICATOR_RELEASE_DATE=2019-08-22
+ENV TFLINT_VERSION=0.11.1
 
 # infrastructure specific build, deploy, test tools
 RUN apk add --no-cache --virtual build-dependencies \
@@ -18,8 +18,8 @@ RUN apk add --no-cache --virtual build-dependencies \
         ruby-dev=2.5.5-r0 \
         make=4.2.1-r2 && \
     pip install \
-        boto3==1.9.190 \
-        awscli==1.16.200 \
+        boto3==1.9.228 \
+        awscli==1.16.238 \
         argparse==1.4.0 \
         jinja2==2.10.1 && \
     echo "gem: --no-document" > /etc/gemrc && \
@@ -40,8 +40,8 @@ RUN apk add --no-cache --virtual build-dependencies \
     apk del build-dependencies
 
 # hashicorp
-ENV TERRAFORM_VERSION=0.12.5
-ENV TERRAFORM_SHA256SUM=babb4a30b399fb6fc87a6aa7435371721310c2e2102a95a763ef2c979ab06ce2
+ENV TERRAFORM_VERSION=0.12.8
+ENV TERRAFORM_SHA256SUM=43806e68f7af396449dd4577c6e5cb63c6dc4a253ae233e1dddc46cf423d808b
 
 RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     echo "${TERRAFORM_SHA256SUM}  terraform_${TERRAFORM_VERSION}_linux_amd64.zip" > terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
@@ -49,8 +49,8 @@ RUN curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
     rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-ENV PACKER_VERSION=1.4.2
-ENV PACKER_SHA256SUM=2fcbd1662ac76dc4dec381bdc7b5e6316d5b9d48e0774a32fe6ef9ec19f47213
+ENV PACKER_VERSION=1.4.3
+ENV PACKER_SHA256SUM=c89367c7ccb50ca3fa10129bbbe89273fba0fa6a75b44e07692a32f92b1cbf55
 
 RUN curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip > packer_${PACKER_VERSION}_linux_amd64.zip && \
     echo "${PACKER_SHA256SUM}  packer_${PACKER_VERSION}_linux_amd64.zip" > packer_${PACKER_VERSION}_SHA256SUMS && \

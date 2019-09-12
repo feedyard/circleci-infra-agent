@@ -25,7 +25,7 @@ control 'awspec' do
   desc 'confirm version of awspec installed'
   describe gem('awspec') do
     it { should be_installed }
-    its('version') { should eq '1.17.4' }
+    its('version') { should eq '1.18.1' }
   end
 end
 
@@ -35,7 +35,7 @@ control 'test-kitchen' do
   desc 'confirm version of test-kitchen installed'
   describe gem('test-kitchen') do
     it { should be_installed }
-    its('version') { should eq '2.2.5' }
+    its('version') { should eq '2.3.2' }
   end
 end
 
@@ -45,7 +45,7 @@ control 'kitchen-ec2' do
   desc 'confirm version of kitchen-ec2 installed'
   describe gem('kitchen-ec2') do
     it { should be_installed }
-    its('version') { should eq '3.0.1' }
+    its('version') { should eq '3.1.0' }
   end
 end
 
@@ -100,7 +100,7 @@ control 'chamber version' do
   title 'confirm chamber version installed'
   desc 'confirm version reported by chamber matches the desired version'
   describe command('chamber version') do
-    its('stdout') { should include ('2.3') }
+    its('stdout') { should include ('2.5') }
   end
 end
 
@@ -118,6 +118,6 @@ control 'tflint version' do
   title 'confirm tflint version installed'
   desc 'confirm version reported by tflint matches the desired version'
   describe command('tflint -v') do
-    its('stdout') { should include ('0.9') }
+    its('stdout') { should include ('0.11') }
   end
 end
